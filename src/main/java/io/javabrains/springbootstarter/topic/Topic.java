@@ -1,26 +1,31 @@
 package io.javabrains.springbootstarter.topic;
 
-public class Topics {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-    private int topicId;
+@Entity
+public class Topic {
+
+    @Id
+    private String id;
     private String topicName;
     private String topicDescription;
 
-    public Topics() {
+    public Topic() {
     }
 
-    public Topics(int topicId, String topicName, String topicDescription) {
-        this.topicId = topicId;
+    public Topic(String id, String topicName, String topicDescription) {
+        this.id = id;
         this.topicName = topicName;
         this.topicDescription = topicDescription;
     }
 
-    public int getTopicId() {
-        return topicId;
+    public String getId() {
+        return id;
     }
 
-    public void setTopicId(int topicId) {
-        this.topicId = topicId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTopicName() {
